@@ -1,0 +1,25 @@
+{
+  "name": "mapbox-gl-image-control",
+  "version": "0.0.1",
+  "description": "Mapbox GL - Image Control",
+  "main": "src/image.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardhi/mapbox-gl-image-control.git"
+  },
+  "keywords": [
+    "mapbox",
+    "gl",
+    "image",
+    "control"
+  ],
+  "author": "Ardhi Lukianto <ardhi@lukianto.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ardhi/mapbox-gl-image-control/issues"
+  },
+  "homepage": "https://github.com/ardhi/mapbox-gl-image-control#readme"
+}
