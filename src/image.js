@@ -1,14 +1,14 @@
 export default class ImageControl {
   constructor (options = {}) {
-    this.url = options.url || '#'
+    this.url = options.url || ''
     this.imageUrl = options.imageUrl || ''
     this.placeholder = options.placeholder || ''
   }
 
   insertControl () {
-    this.container = document.createElement('div')
+    this.container = document.createElement(this.url === '' ? 'div' : 'a')
     this.container.classList.add('mapboxgl-ctrl')
-    this.container.classList.add('mapboxgl-ctrl-logo')
+    this.container.classList.add('mapboxgl-ctrl-image')
     this.image = document.createElement('img')
     this.image.src = this.imageUrl
     this.text = document.createElement('div')
@@ -16,6 +16,10 @@ export default class ImageControl {
     this.text.style.display = 'none'
     this.container.appendChild(this.image)
     this.container.appendChild(this.text)
+    if (this.url !== '') {
+      this.container.setAttribute('href', this.url)
+      this.container.setAttribute('target', '_blank')
+    }
   }
 
   onAdd (map) {
@@ -23,6 +27,7 @@ export default class ImageControl {
     this.insertControl()
     this.image.addEventListener('mouseenter', this.onMouseEnter.bind(this))
     this.image.addEventListener('mouseleave', this.onMouseLeave.bind(this))
+    this.onMouseLeave()
     return this.container
   }
 
